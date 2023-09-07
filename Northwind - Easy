@@ -1,0 +1,58 @@
+https://www.sql-practice.com/
+---Answers to all the easy level questions using the Northwind DB on SQL-Practice.com 
+
+Requirement: Show the category_name and description from the categories table sorted by category_name.
+Answer:
+Select category_name, description
+from categories
+order by category_name ASC
+
+Requirement: Show all the contact_name, address, city of all customers which are not from 'Germany', 'Mexico', 'Spain'
+Answer:
+select contact_name, address,city
+From customers
+where country NOT IN ('Germany', 'Mexico', 'Spain')
+
+Requirement: Show order_date, shipped_date, customer_id, Freight of all orders placed on 2018 Feb 26
+Answer:
+select order_date, shipped_date, customer_id, freight
+from orders
+where order_date = '2018-02-26'
+
+Requirement: Show the employee_id, order_id, customer_id, required_date, shipped_date from all orders shipped later than the required date
+Answer:
+select employee_id, order_id, customer_id, required_date, shipped_date
+From orders
+Where shipped_date > required_date
+
+Requirement: Show all the even numbered Order_id from the orders table
+Answer: 
+select order_id
+from orders
+where order_id % 2 = 0
+
+Requirement: Show the city, company_name, contact_name of all customers from cities which contains the letter 'L' in the city name, sorted by contact_name
+Answer: 
+select city, company_name, contact_name
+from customers
+where city like	'%L%'
+order by contact_name asc
+
+Requirement: Show the company_name, contact_name, fax number of all customers that has a fax number. (not null)
+Answer: 
+select company_name, contact_name, fax
+from customers
+where fax is not null
+
+Requirement: Show the first_name, last_name. hire_date of the most recently hired employee.
+Answer: 
+select first_name, last_name, hire_date
+from employees
+order by hire_date desc
+limit 1
+
+Requirement: Show the average unit price rounded to 2 decimal places, the total units in stock, total discontinued products from the products table.
+Answer:
+select ROUND(avg(unit_price),2), SUM(units_in_stock), SUM(discontinued)
+From products
+
