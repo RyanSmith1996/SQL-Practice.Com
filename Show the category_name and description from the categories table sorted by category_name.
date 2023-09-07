@@ -1,6 +1,0 @@
-Site - SQL-Practice.Com
-Requirement: Show the category_name and description from the categories table sorted by category_name.  
-Answer:
-Select category_name, description
-from categories
-order by category_name ASC
