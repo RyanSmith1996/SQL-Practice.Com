@@ -1,0 +1,5 @@
+Requirement: Show all the contact_name, address, city of all customers which are not from 'Germany', 'Mexico', 'Spain'
+Answer: 
+select contact_name, address,city
+From customers
+where country NOT IN ('Germany', 'Mexico', 'Spain')
